@@ -1,0 +1,31 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
+{
+	"name": "Spark/Scala Notebook",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "21", 
+			"INSTALL_MAVEN": "true",
+			"INSTALL_GRADLE": "false",
+			"NODE_VERSION": "lts/*"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"java.jdt.ls.java.home": "/docker-java-home"
+			},
+			"extensions": [
+                "ms-toolsai.jupyter",
+				"GitHub.github-vscode-theme",
+				"ms-ceintl.vscode-language-pack-fr",
+				"streetsidesoftware.code-spell-checker",
+                "streetsidesoftware.code-spell-checker-french"
+			]
+		}
+	},
+	"forwardPorts": [8080, 7077]
+	// "postCreateCommand": ""
+	// "remoteUser": "root"
+}
