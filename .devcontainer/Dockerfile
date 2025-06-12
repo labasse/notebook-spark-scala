@@ -31,5 +31,5 @@ RUN apt update -y && \
     python3 -m venv ${VENV_DIR} && \
     ${VENV_DIR}/bin/pip install --upgrade pip && \
     ${VENV_DIR}/bin/pip install toree jupyter && \
-    ${VENV_DIR}/bin/jupyter toree install --spark_home=${SPARK_HOME}
+    ${VENV_DIR}/bin/jupyter toree install --spark_home=${SPARK_HOME} --interpreters=Scala,SQL
 
