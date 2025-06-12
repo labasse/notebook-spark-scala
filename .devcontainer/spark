@@ -1,16 +1,19 @@
 #!/bin/bash
-#
-# spark-master        Apache Spark Master
-#
-# chkconfig: 35 99 99
-# description: Apache Spark Master
-#
+### BEGIN INIT INFO
+# Provides:          spark
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Apache Spark Master Service
+### END INIT INFO
 
 . /etc/rc.d/init.d/functions
 
 # Configuration par défaut - à adapter selon votre installation
-SPARK_HOME=${SPARK_HOME:-~vscode/spark}
-SPARK_USER=${SPARK_USER:-vscode}
+JAVA_HOME=/usr/lib/jvm/msopenjdk-current
+SPARK_HOME=${SPARK_HOME:-/opt/spark}
+SPARK_USER=${SPARK_USER:-spark}
 SPARK_PID_DIR=${SPARK_PID_DIR:-/var/run/spark}
 SPARK_LOG_DIR=${SPARK_LOG_DIR:-/var/log/spark}
 SPARK_MASTER_HOST=${SPARK_MASTER_HOST:-$(hostname)}
